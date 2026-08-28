@@ -17,16 +17,17 @@ struct ContentView: View {
         
         .padding()
         
+        
           
     }
     func pegs(colors: Array<Color>) -> some View {
         HStack {
             ForEach(colors.indices, id: \.self) { index in
                 RoundedRectangle(cornerRadius: 10)
-                    .aspectRatio(1, contentMode: .fit)
+                     .aspectRatio(1, contentMode: .fit)
                     .foregroundStyle(colors[index])
             }
-            MatchMarkers(matches: [.exact, .exact, .nomatch, .inexact])
+            MatchMarkers(matches: [.exact, .exact, .inexact, .inexact, .exact, .nomatch])
             
         }
     }

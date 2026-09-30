@@ -110,6 +110,31 @@ struct MatchMarkersPreview: View {
     
 }
 
+extension Color {
+    
+    init?(named name: String){
+        switch name.lowercased() {
+        case "green": self = .green
+        case "blue" : self = .blue
+        case "black": self = .black
+        default: return nil
+        }
+    }
+    var name: String? {
+        switch self {
+        case .green:
+            return "green"
+        case .blue:
+            return "blue"
+        case .black:
+            return "black"
+        default:
+            return nil
+        }
+        
+    }
+}
+
 
 #Preview {
     MatchMarkersPreview(matchesPreview: [.exact, .inexact, .inexact,])
